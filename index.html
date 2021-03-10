@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animal Tracker</title>
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="lib/js/jquery-2.2.4.min.js"></script>
+
+	<script src="js/login.js"></script>
+	<script src="js/app.js"></script>
+
+	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+
+	<section data-role="page" id="login-page">
+		<div data-role="main" class="flex-parent flex-vertical flex-align-center">
+			<div class="flex-child"></div>
+			<form id="login-form" class="form" data-ajax="false">
+				<div class="form-control">
+					<label for="" class="form-label">Username</label>
+					<input class="form-input" type="text" data-role="none" placeholder="Type your Username" id="login-username">
+				</div>
+				<div class="form-control">
+					<label for="" class="form-label">Password</label>
+					<input class="form-input" type="password" data-role="none" placeholder="Type your Password" id="login-password">
+				</div>
+				<div class="form-control">
+					<input type="submit" class="form-button" value="Login" data-role="none">
+				</div>
+				<div class="form-control text-center">
+					<a href="#signup-page">Sign Up</a>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<section data-role="page" id="signup-page">
+		<div data-role="main" class="flex-parent flex-align-center flex-justify-center">
+			<form id="signup-form" class="form" data-ajax="false">
+				<div class="form-control">
+					<label for="" class="form-label">Email</label>
+					<div class="hotdog">
+						<span>&</span>
+						<input class="form-blank" type="text" data-role="none" placeholder="Type your Password" id="signup-email">
+					</div>
+				</div>
+				<div class="form-control">
+					<label for="" class="form-label">Password</label>
+					<div class="hotdog">
+						<input class="form-blank" type="password" data-role="none" placeholder="Type your Password" id="signup-password">
+					</div>
+				</div>
+				<div class="form-control">
+					<input type="submit" class="form-button hotdog" value="Sign Up" data-role="none">
+				</div>
+				<div class="form-control text-center">
+					<a href="#login-page">Sign In</a>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<section data-role="page" id="recent-page">
+		<header data-role="header">
+			<h1>Recent Animals</h1>
+		</header>
+		<div data-role="main">
+			<p>Check out the animal!</p>
+		</div>
+		<footer data-role="footer" class="nav">
+			<ul>
+				<li><a href="#recent-page">Recent</a></li>
+				<li><a href="#list-page">List</a></li>
+				<li><a href="#profile-page">Profile</a></li>
+			</ul>
+		</footer>
+	</section>
+
+
+	<section data-role="page" id="list-page">
+		<header data-role="header" class="nav">
+			<h1>Animal List</h1>
+			<ul>
+				<li class="flex-child"></li>
+				<li><a href="#" data-activate="#list-add-animal">&plus;</a></li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<!-- ul>li*6>a[href=#animal-profile]>{Animal $} -->
+			<ul>
+				<li><a href="#animal-profile-page">Animal 1</a></li>
+				<li><a href="#animal-profile-page">Animal 2</a></li>
+				<li><a href="#animal-profile-page">Animal 3</a></li>
+				<li><a href="#animal-profile-page">Animal 4</a></li>
+				<li><a href="#animal-profile-page">Animal 5</a></li>
+				<li><a href="#animal-profile-page">Animal 6</a></li>
+			</ul>
+		</div>
+		<footer data-role="footer" class="nav" data-template="footer-nav"></footer>
+
+		<div class="modal" id="list-add-animal">
+			<div class="modal-back" data-deactivate="#list-add-animal"></div>
+			<div class="modal-popup">
+				<div class="modal-head">
+					<h1>Add Animal</h1>
+				</div>
+				<form class="modal-body">
+					<div class="form-control">
+						<label for="" class="form-label">Name</label>
+						<input type="text" class="form-input" id="list-add-animal-name" data-role="none">
+					</div>
+				</form>
+				<div class="modal-foot">
+					<a href="#">Submit</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section data-role="page" id="profile-page">
+		<div data-role="main">
+			<p>User Profile</p>
+			<p>
+				<a href="#" class="js-logout">Logout</a>
+			</p>
+		</div>
+		<footer data-role="footer" class="nav">
+			<ul>
+				<li><a href="#recent-page">Recent</a></li>
+				<li><a href="#list-page">List</a></li>
+				<li><a href="#profile-page">Profile</a></li>
+			</ul>
+		</footer>
+	</section>
+
+
+	<section data-role="page" id="animal-profile-page">
+		<header data-role="header" class="nav">
+			<h1>Animal Name</h1>
+			<ul>
+				<li>
+					<a href="#back" data-rel="back">Back</a>
+				</li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<p>Animal Profile</p>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<script type="text/template" id="footer-nav">
+	<ul>
+		<li><a href="#recent-page" data-activateone="[data-role='footer'] li:nth-child(1)">Recent</a></li>
+		<li><a href="#list-page" data-activateone="[data-role='footer'] li:nth-child(2)">List</a></li>
+		<li><a href="#profile-page" data-activateone="[data-role='footer'] li:nth-child(3)">Profile</a></li>
+	</ul>
+	</script>
+	
+</body>
+</html>
