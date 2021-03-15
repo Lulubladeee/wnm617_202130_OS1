@@ -1,4 +1,3 @@
-
 const checkSigninForm = () => {
    let username = $("#signin-username").val();
    let password = $("#signin-password").val();
