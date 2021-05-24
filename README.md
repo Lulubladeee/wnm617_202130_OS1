@@ -3,5 +3,4 @@ Advanced Tech: Mobile Web
 <<<<<<< HEAD
 
 Links:
-http://mylulu.net/WNM618/lu.pan/
-Porfolio:
+http://mylulu.net/WNM617/lu.pan/
