@@ -2,12 +2,17 @@
 
 const checkLoginForm = async() => {
 	
+	let username = $("#login-username").val();
+    let password = $("#login-password").val();
+
+   if(username=='' || password=='') {
+      // warn that not all information is there
+      return;
+   }
+
 	let u = await tPost({
 		type:50,
-		params:[
-			$("#login-username").val(),
-			$("#login-password").val()
-		]
+		params:[username,password]
 	}).then(d=>d.result[0]);
 
 	if(u !== undefined) {
@@ -17,6 +22,9 @@ const checkLoginForm = async() => {
 		sessionStorage.removeItem('userId');
 		console.log("nope")
 	}
+	
+
+	
 
 	checkUserId();
 }

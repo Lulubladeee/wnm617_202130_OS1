@@ -5,9 +5,9 @@
 
 function makeConn() {
 	$host = "localhost";
-	$user = "wnm617_yuanyue";
-	$pass = "Zyr.1103@";
-	$dbname = "wnm617_yuanyue";
+	$user = "mylulu";
+	$pass = "lulushengyu54";
+	$dbname = "wnm_lulu";
 
 	$c = new mysqli($host,$user,$pass,$dbname);
 	if($c->connect_errno) die($c->connect_error);
@@ -32,7 +32,7 @@ function makeQuery($mconn,$prepstatement,$preptype,$params) {
 			$statement->bind_param($preptype,...$params) &&
 			$statement->execute()
 		) {
-			if(substr($prepstatement,0,6)!="SELECT") {
+			if(substr($prepstatement,0,6)!="SELECT") {zenmelianj
 				return [
 					"params"=>$params,
 					"qry"=>$prepstatement,
