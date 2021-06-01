@@ -6,7 +6,7 @@
 function makeConn() {
 	$host = "localhost";
 	$user = "mylulu";
-	$pass = "lulushengyu54";
+	$pass = "CT5YMfCFaA4EFSCe";
 	$dbname = "wnm_lulu";
 
 	$c = new mysqli($host,$user,$pass,$dbname);
@@ -32,7 +32,7 @@ function makeQuery($mconn,$prepstatement,$preptype,$params) {
 			$statement->bind_param($preptype,...$params) &&
 			$statement->execute()
 		) {
-			if(substr($prepstatement,0,6)!="SELECT") {zenmelianj
+			if(substr($prepstatement,0,6)!="SELECT") {
 				return [
 					"params"=>$params,
 					"qry"=>$prepstatement,
@@ -104,13 +104,13 @@ function makeStatement($mconn, $type, $params) {
 			// 	","ss",[$params[0],$params[1]]);
 			// if(count($found['result']))
 			// 	return ["error"=>"That email already exists"];
-
+            $params[2] = md5($params[2]);
 			makeQuery($mconn, "
 				INSERT INTO track_users
-				(`username`,`email`,`age`,`bio`)
+				(`username`,`email`,`password`)
 				VALUES
-				(?,?,?,?)
-				","ssss",$params);
+				(?,?,?)
+				","sss",$params);
 
 			return ["result"=>$mconn->insert_id];
 
