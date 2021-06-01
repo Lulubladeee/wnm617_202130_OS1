@@ -13,7 +13,7 @@
     password: 'pass',
     bio:'{{lorem(2, "sentences")}}',
     img:
-    'http://yuanye940702.com/wnm617/mo15/img/people1.png',
+    'http://mylulu.net/WNM617/lu.pan/img/people1.png',
     
     animals:['{{repeat(6,7)}}',
              {
@@ -30,7 +30,7 @@
     return breeds[tags.integer(0,2)];
    },
        img:function(tags) {
-         return 'http://yuanye940702.com/wnm617/mo15/img/dog'+(this.id+1)+'.png';
+         return 'http://mylulu.net/WNM617/lu.pan/img/dog'+(this.id+1)+'.png';
     },
       locations:[
         '{{repeat(5, 7)}}',
